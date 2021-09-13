@@ -19,3 +19,35 @@ def merge(hash_1, hash_2)
     end
     merge_hash
 end
+
+def censor(sentence, curse_word_array)
+    vowel_array = %w(a e i o u A E I O U)
+
+    sentence_array = sentence.split(" ")
+
+    sentence_array.map! do |word|
+        if curse_word_array.include?(word.downcase)
+            word.chars
+        else
+            word
+        end
+    end
+
+    sentence_array.map! do |word|
+        if word.is_a? Array
+            word.map! do |letter|
+                if vowel_array.include?(letter)
+                    "*"
+                else
+                    letter
+                end
+            end
+            word.join("")
+        else
+            word
+        end
+    end
+
+
+    sentence_array.join(" ")
+end
