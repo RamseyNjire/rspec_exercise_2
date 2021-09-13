@@ -51,3 +51,9 @@ def censor(sentence, curse_word_array)
 
     sentence_array.join(" ")
 end
+
+def power_of_two?(number)
+    return true if number == 1
+    return false unless number % 2 == 0
+    power_of_two?(number / 2)
+end
