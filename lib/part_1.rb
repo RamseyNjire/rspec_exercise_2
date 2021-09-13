@@ -11,3 +11,11 @@ def partition(array, number)
     holding_array << less_than_array
     holding_array << greater_than_array
 end
+
+def merge(hash_1, hash_2)
+    merge_hash = hash_1.dup
+    hash_2.each do |key, value|
+        merge_hash[key] = value
+    end
+    merge_hash
+end
