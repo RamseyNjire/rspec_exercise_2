@@ -35,3 +35,11 @@ def substrings(string)
     substring_array
 
 end
+
+def palindrome_substrings(string)
+    substring_array = substrings(string)
+
+    substring_array.select do |string|
+        palindrome?(string) if string.length > 1
+    end
+end
