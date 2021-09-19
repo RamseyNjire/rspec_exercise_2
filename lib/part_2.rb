@@ -13,3 +13,25 @@ def palindrome?(string)
 
     confirm
 end
+
+
+def substrings(string)
+    substring_array = []
+
+    string_array = string.chars
+
+    until string_array.length == 0
+
+        count = 1
+        string_array.length.times do
+            substring_array << string_array[0, count].join("")
+            count += 1
+        end
+
+        string_array.shift
+
+    end
+
+    substring_array
+
+end
